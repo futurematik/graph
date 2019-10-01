@@ -26,14 +26,6 @@ Build a `Map<T, T[]>` from an existing arbitrary graph structure.
 function fromNodes<T>(root: T, getChildren: (node: T) => T[]): Map<T, T[]>;
 ```
 
-### getAdjacencies
-
-Get map that has the path length from a given node to each reachable node. The map will include the node itself with a path length of 0.
-
-```typescript
-function getAdjacencies<T>(graph: Map<T, T[]>, from: T): Map<T, number>;
-```
-
 ### getLeaves
 
 Get an array of leaf nodes (nodes with no children) from the given graph.
@@ -56,4 +48,12 @@ Build a list of edges (`[T, T][]`) from a graph map (`Map<T, T[]>`).
 
 ```typescript
 function toEdges<T>(graph: Map<T, T[]>): [T, T][];
+```
+
+### topologicalSort
+
+Build a list of all nodes, sorted in an order such that for any given node, all nodes which point to that node come first in the list.
+
+```typescript
+function topologicalSort<T>(graph: Map<T, T[]>): T[];
 ```
