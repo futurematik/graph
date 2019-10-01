@@ -11,7 +11,8 @@
     "project": "tsconfig.json"
   },
   "rules": {
-    "@typescript-eslint/no-use-before-define": ["warn", { "functions": false }],
-    "@typescript-eslint/no-floating-promises": "error"
+    "@typescript-eslint/no-floating-promises": "error",
+    "@typescript-eslint/no-non-null-assertion": "off",
+    "@typescript-eslint/no-use-before-define": ["warn", { "functions": false }]
   }
 }

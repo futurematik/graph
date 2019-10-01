@@ -34,6 +34,14 @@ Get an array of leaf nodes (nodes with no children) from the given graph.
 function getLeaves<T>(graph: Map<T, T[]>): T[];
 ```
 
+### hasCycles
+
+Returns true if the graph contains a cycle reachable from the given node.
+
+```typescript
+function hasCycles<T>(graph: Map<T, T[]>, from: T): boolean;
+```
+
 ### toEdges
 
 Build a list of edges (`[T, T][]`) from a graph map (`Map<T, T[]>`).
