@@ -8,7 +8,7 @@ export function sortEntries(
   sort?: (a: unknown, b: unknown) => number,
 ): [unknown, unknown[]][] {
   if (!sort) {
-    sort = (a, b) => {
+    sort = (a, b): number => {
       if (typeof a !== 'number' || typeof b !== 'number') {
         throw new Error(`don't know how to sort keys`);
       }
