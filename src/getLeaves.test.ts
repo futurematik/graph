@@ -13,7 +13,7 @@ describe('leaves', () => {
       [6, []],
     ]);
 
-    const leafNodes = getLeaves(graph);
+    const leafNodes = getLeaves(graph).sort((a, b) => a - b);
 
     expect(leafNodes).toEqual([2, 4, 5, 6]);
   });

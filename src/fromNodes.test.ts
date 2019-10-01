@@ -1,6 +1,7 @@
 /* eslint-disable */
 import 'jest';
 import { fromNodes } from './fromNodes';
+import { sortEntries } from './sortEntries';
 
 /**
  * graph looks like this:
@@ -26,10 +27,7 @@ describe('fromNodes', () => {
     const graph = fromNodes(n1, x => x.children);
 
     // sort for the assertion
-    const sorted = Array.from(graph.entries(), ([k, v]): [Node, Node[]] => [
-      k,
-      v.sort(sortNode),
-    ]).sort(([a], [b]) => sortNode(a, b));
+    const sorted = sortEntries(graph, (a, b) => a.key - b.key);
 
     expect(sorted).toEqual([
       [n1, [n2, n3]],
@@ -45,8 +43,4 @@ describe('fromNodes', () => {
 interface Node {
   key: number;
   children: Node[];
-}
-
-function sortNode(a: Node, b: Node) {
-  return a.key - b.key;
 }
