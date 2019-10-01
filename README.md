@@ -18,6 +18,14 @@ Build a `Map<T, T[]>` from a list of edges (`[T, T][]`).
 function fromEdges<T>(edges: [T, T][]): Map<T, T[]>;
 ```
 
+### fromNodes
+
+Build a `Map<T, T[]>` from an existing arbitrary graph structure.
+
+```typescript
+function fromNodes<T>(root: T, getChildren: (node: T) => T[]): Map<T, T[]>;
+```
+
 ### getAdjacencies
 
 Get map that has the path length from a given node to each reachable node. The map will include the node itself with a path length of 0.
