@@ -1,4 +1,4 @@
-/* eslint-ignore */
+/* eslint-disable */
 import 'jest';
 import { getLeaves } from './getLeaves';
 
